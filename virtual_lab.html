@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>ViLABS-NITW</title>
+</head>
+
+<body>
+  <section class="showcase">
+    <header>
+      <h2 class="logo">V'i'LABS-NITW</h2>
+      <div class="toggle"></div>
+    </header>
+    <video src="video.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+    <div class="text">
+      <h4>NIT WARANGAL</h4>
+      <h2>Virtual Labs</h2>
+      
+      <a href="#">Explore</a>
+    </div>
+  </section>
+  <div class="menu">
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="#">New Registration</a></li>
+      <li><a href="#">Student Login</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </div>
+  <script>
+    const menuToggle = document.querySelector('.toggle');
+    const showcase = document.querySelector('.showcase');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      showcase.classList.toggle('active');
+    });
+    </script>
+</body>
+
+</html>
+
