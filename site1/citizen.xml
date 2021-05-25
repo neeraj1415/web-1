@@ -1,0 +1,36 @@
+<<body>
+  <section class="showcase active">
+    <header>
+      <h2 class="logo">V'i'LABS-NITW</h2>
+      <div class="toggle active"></div>
+    </header>
+    <video src="media/test1.mp4" muted="" loop="" autoplay=""></video>
+    <div class="overlay"></div>
+    <div class="text">
+      <h4>Everything is theoretically</h4>
+      <h2>Impossible,</h2>
+      <h4>until it is done</h4>
+      <a href="#">Explore</a>
+    </div>
+  </section>
+  <div class="menu">
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="#">New Registration</a></li>
+      <li><a href="#">Student Login</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </div>
+  <script>
+    const menuToggle = document.querySelector('.toggle');
+    const showcase = document.querySelector('.showcase');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      showcase.classList.toggle('active');
+    });
+    </script>
+
+
+
+</body>

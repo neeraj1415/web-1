@@ -1,0 +1,8 @@
+body{
+	background-color:black;
+}
+table,th,tr,td{
+	border:1px solid black;
+	width:200px;
+	border-spacing:5px;
+}

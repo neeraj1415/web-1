@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="EN"><head>
+	<meta charset="UTF-8">
+
+	<title>WSDC - Student Portal</title>
+
+	<meta name="description" content="Login Template">
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+	<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/semantic/semantic.min.css">
+	<link rel="stylesheet" href="/static/css/styles.css">
+
+	<script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/semantic/semantic.min.js"></script>
+</head>
+
+<body>
+	<div id="wrapper" class="ui two column divided stackable grid container">
+		<div class="column">
+				<div id="logo">
+					<img id="logo_img" class="ui centered image" src="/static/img/logo_wsdc.png">
+					<h1>Student Portal</h1>
+				</div>
+		</div>
+		<div class="column">
+				<form method="post" role="form" enctype="multipart/form-data">
+				<input type="hidden" name="csrfmiddlewaretoken" value="B4ziMSlh8zHzexJXNkTnbYXiy9JwBQCF6tlgeDPj28Dv8mMXMdbwnltTyHf1WW1L">
+					<div id="login" class="ui center aligned container">
+						<h1>Welcome!</h1><br>
+						<input type="text" placeholder="registration number" name="username" required=""><br>
+						<input type="password" placeholder="password" name="passw" required=""><br>
+						<input type="submit" value="Login">
+						<hr>
+					</div>
+				</form>
+				<center>
+					<button class="ui button" data-toggle="modal" data-target="#regModal"><i class="edit icon"></i> Signup</button>
+					<button class="ui button" data-toggle="modal" data-target="#amnesiacModal"><i class="user icon"></i>Forgot Password</button>
+				</center>
+		</div>
+	</div>
+
+
+		<div class="modal fade" id="amnesiacModal" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+  			<div class="modal-content">
+    			<div class="modal-header">
+    				<div class="ui center aligned container grey message">
+		  				<h3 class="modal-title">Reset Password</h3>
+		  			</div>
+     				<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+
+    			<div class="modal-body">
+					<center><p>You can enter student mail incase you forgot your registered personal Email ID</p></center>
+					<form onsubmit="stopBtn();" method="post" action="/amnesiac/" role="form" enctype="multipart/form-data" class="ui form">
+					<input type="hidden" name="csrfmiddlewaretoken" value="B4ziMSlh8zHzexJXNkTnbYXiy9JwBQCF6tlgeDPj28Dv8mMXMdbwnltTyHf1WW1L">
+							<div class="form-group ui raised segment">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+										  <div class="ui label">Email: </div>
+										  <input name="mail" type="text" class="" required="">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+								<div class="form-group">
+										<div class="ui labeled fluid small input">
+										  <div class="ui label">Registration Number: </div>
+										  <input name="regnum" type="text" class="" required="">
+										</div>
+									</div>					
+								</div>
+							</div>
+						</div>
+						<center>
+							<div class="form-group">
+								<button class="ui blue button subBtn" type="submit" name="submit">Submit</button>
+							</div>
+						</center>
+					</form>
+    			</div>
+  			</div> 
+		</div>
+		</div>
+
+
+		<div class="modal fade" id="regModal" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+  			<div class="modal-content">
+    			<div class="modal-header">
+    				<div class="ui center aligned container">
+		  				<h2 class="modal-title">Create a new account</h2>
+		  			</div>
+     				<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+
+    			<div class="modal-body">
+					<form onsubmit="stopBtn();" method="post" action="/signup/" role="form" enctype="multipart/form-data" class="ui form">
+					<input type="hidden" name="csrfmiddlewaretoken" value="B4ziMSlh8zHzexJXNkTnbYXiy9JwBQCF6tlgeDPj28Dv8mMXMdbwnltTyHf1WW1L">
+
+							<div class="form-group ui raised segment">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+										  <div class="ui label">Full Name: </div>
+										  <input placeholder="Enter Name" name="fullname" pattern="[ A-Za-z']+" class="" required="">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+								<div class="form-group">
+										<div class="ui labeled fluid small input">
+										  <div class="ui label">Username: </div>
+										  <input placeholder="Enter username of your choice" name="username" type="text" class="" required="">
+										</div>
+									</div>					
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Password: </div>
+											<input placeholder="Enter a password" id="password" name="password" type="password" class="" required="">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Repeat Password: </div>
+											<input id="repassword" placeholder="Re-enter the same password" name="repassword" type="password" required="">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="form-group ui raised segment">
+
+
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Registration Number:</div> 
+											<input placeholder="Enter a valid registration number" type="text" name="regno" required="">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Roll Number: </div>
+											<input placeholder="Same as registration number for 1st year" name="rollno" type="text" required="">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Email: </div>
+											<input placeholder="Enter email" name="email" type="email" required="">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Mobile Number: </div>
+											<input placeholder="Enter mobile number" name="mobileno" pattern="[ 0-9+]+" class="" required="">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Gender: </div>
+											<select name="gender" required="">
+												<option hidden="" disabled="" selected="" value=""> Choose Gender </option>
+												<option class="" value="M">Male</option>
+												<option class="" value="F">Female</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Course: </div>
+											<select name="course" required="">
+											<option hidden="" disabled="" selected="" value=""> Choose Course </option>
+												
+													<option value="1">B Tech</option>
+												
+													<option value="2">M Tech</option>
+												
+													<option value="3">MCA</option>
+												
+													<option value="4">MBA</option>
+												
+													<option value="5">MSc</option>
+												
+													<option value="6">PhD</option>
+												
+													<option value="7">Msc. Tech</option>
+												
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Current Year: </div>
+											<input placeholder="Example: 1" type="number" name="curryr" required="">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="ui labeled fluid small input">
+											<div class="ui label">Admission Type: </div>
+											<select name="admtype" required="">
+											<option hidden="" disabled="" selected="" value=""> Choose Category </option>
+												
+													<option value="1">Normal</option>
+												
+													<option value="2">DASA</option>
+												
+													<option value="3">ICCR</option>
+												
+													<option value="4">MEA</option>
+												
+													<option value="5">SPDC</option>
+												
+													<option value="6">Study In India</option>
+												
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<center>
+							<div class="form-group">
+								<button class="ui blue button submitBtn subBtn" type="submit" name="submit">Submit</button>
+							</div>
+						</center>
+					</form>
+
+    			</div>
+
+  			</div> 
+		</div>
+		</div>
+
+
+        <div class="modal fade" id="infoModal" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+	                    <div class="ui grey message">
+                            <h3 style="text-align: center;" id="errMessage"></h3>
+	                    </div>
+	                </div>
+                </div> 
+            </div>
+        </div>
+
+		<button style="visibility: hidden;" id="toggleMod" data-toggle="modal" data-target="#infoModal">or Signup</button>
+
+<script type="text/javascript">
+
+	$('#infoModal').on('hidden.bs.modal', function () {
+		window.location.href = '/';
+	});
+
+
+	if("")
+	{
+		$('#errMessage').text("");
+		$('#toggleMod').click();
+	}
+
+	function stopBtn(element)
+	{
+		$('.subBtn').addClass("disabled");
+	}
+
+	var now = new Date(),
+	    maxDate = now.toISOString().substring(0,10);
+
+	$('#dob').prop('max', maxDate);
+
+
+	$('#password').on('input', function() {
+		p1 = $('#password').val();
+		p2 = $('#repassword').val();
+
+	    if(p1 == p2)
+	    {
+	    	$('.submitBtn').removeClass('disabled');
+	    	$('.submitBtn').html('Submit');
+	    }
+	    else
+	    {
+		    $('.submitBtn').addClass('disabled');
+		    $('.submitBtn').html('Passwords do not match!');	
+	    }
+	});
+
+	$('#repassword').on('input', function() {
+	    
+		p1 = $('#password').val();
+		p2 = $('#repassword').val();
+
+	    if(p1 == p2)
+	    {
+	    	$('.submitBtn').removeClass('disabled');
+	    	$('.submitBtn').html('Submit');
+	    }
+	    else
+	    {
+		    $('.submitBtn').addClass('disabled');
+		    $('.submitBtn').html('Passwords do not match!');
+	    }
+	});
+</script>
+
+
+
+</body></html>

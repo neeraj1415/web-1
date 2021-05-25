@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #e5e5e5;
+}
+
+
+.header {
+  padding: 30px;
+  text-align: center;
+  background: grey;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>TOURIST PLACES</h1>
+  
+</div>
+
+<div class="topnav">
+  <a href="#">home</a>
+  <a href="https://www.nitw.ac.in/">NIT Warangal</a>
+   <a href="https://travel.usnews.com/rankings/worlds-best-vacations/" style="float:right">More</a>
+  
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>PARIS</h2>
+      <h5>Europe</h5>
+     <img src="paris.jpg" alt="Paris" style="width:150px">
+
+      <p>about paris</p>
+      <p>Paris (nicknamed the "City of light") is the capital city of France, and the largest city in France. ... Paris is also the center of French economy, politics, traffic and culture. Paris has many art museums and historical buildings. As a traffic center, Paris has a very good underground subway system (called the Metro)..</p>
+    </div>
+    <div class="card">
+      <h2>TAJ MAHAL</h2>
+      <h5>Agra,India</h5>
+     <img src="tajmahal.GIF" alt="Taj Mahal" style="width:150px">
+      <p>About Taj Mahal</p>
+      <p>One of the most significant Mughal Empire architectural marvels still stands in all its beauty and finesse in Agra, Uttar Pradesh, India. The Taj Mahal is a white marble built by Mughal emperor Shah Jahan in memory of his third wife, Mumtaz Mahal. In Arabic, the Taj Mahal is known as "crown of palaces"..</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <img src="image.jpeg" alt="Photo" style="width:150px">
+      <p>I am Neeraj Kumar .. I Love Travelling..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Places</h3>
+     <img src="egypt.jpeg" alt="Egypt" style="width:50px"><br>
+      <img src="statue.jpg" alt="Statue of Liberty" style="width:50px"><br>
+      <img src="thai.jpg" alt="Thailand" style="width:50px">
+    </div>
+    
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Thank You</h2>
+</div>
+
+</body>
+</html>
