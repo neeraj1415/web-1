@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	 <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <h1 style="text-align:center;">INVERTING AMPLIFIER</h1>
+  <style>
+ .button {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin:10px 10px 10px 200px;
+}
+button {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin:3px 3px 3px 3px;
+}
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="button">
+<button id="area1">Area 1</button>
+<button id="area2">Area 2</button>
+<button id="area3">objective</button>
+<button id="area4">Area 4</button>
+<button id="area5">Area 5</button>
+<button id="area6">Area 6</button>
+<button id="area7">Area 7</button>
+</div>
+<p id="1">Area 1</p>
+<section id="2" style="display: none;"><H2>THEORY</H2>
+<p>An inverting amplifier using opamp is a type of amplifier using opamp where the output waveform will be phase opposite to the input waveform. The input waveform will be amplifier by the factor Av (voltage gain of the amplifier) in magnitude and its phase will be inverted. In the inverting amplifier circuit the signal to be amplified is applied to the inverting input of the opamp through the input resistance R1. Rf is the feedback resistor. Rf and Rin together determine the gain of the amplifier. Inverting operational amplifier gain can be expressed using the equation Av = – Rf/R1. Negative sign implies that the output signal is negated. The circuit diagram of a basic inverting amplifier using opamp is shown below.
+ The input and output waveforms of an inverting amplifier using opamp is shown below. The graph is drawn assuming that the gain (Av) of the amplifier is 2
+and the input signal is a sine wave. It is clear from the graph that the output
+is twice in magnitude when compared to the input (Vout = Av x Vin) and phase opposite to the input.</p>
+<H2>PROCEDURE</H2>
+<p>performance and of course the most popular operational amplifier. It can be used in a verity of applications like integrator,
+Differentiator, voltage follower, amplifier etc. uA 741 has a wide supply voltage range (+/-22V DC) and has a high open loop gain. The IC has an integrated compensation network for
+improving stability and has short circuit protection. Signal to be amplified is applied to the inverting pi (pin2) of the IC. Non inverting pin (pin3) is connected to ground. R1 is the input resistor and Rf is the feedback resistor. Rf and R1 together sets the gain of the amplifier. With the used values of R1 and Rf the gain will be 10 LL L A B M A N U A L ( E . C . D E P T , ) Page
+6 I N T E G R A T E D C I R C U I T S A N D A P P L I C A T I O N S 1 5 1 0 0 3 (Av = - Rf/R1 =
+10K/1K = 10). RL is the load resistor and the amplified signal will be
+available across it. POT R2 can be used for nullifying the output offset voltage. If you are planning to assemble the circuit, the power supply must be well regulated and filtered. Noise from the power supply can adversely affect the performance of the circuit. When assembling on PCB it is recommended to mount the IC on the board using an IC base.
+In the inverting amplifier only one input is applied and that is to the inverting input ( (V2) terminal. The Non inverting input terminal (V1) is grounded.
+Since, V1=0
+V& V2=Vin
+Vo= -A Vin
+The negative sign indicates the output voltage is 1800 out of phase with respect to the input and amplified by gain A.
+Time simulation
+V1 is currently configured to output a 1kHz sine wave, and you can see the output as well.
+Amplifier bandwidth
+Try the Bode simulation mode. At low frequencies, we get a gain of +20dB (a factor of 10^(20/20) = 10 in voltage) with a phase of -180 degrees -- this means -10. You'll see that at higher frequencies, the circuit no longer provides a gain of -10! You're seeing the op-amp's Gain-Bandwidth product at work. If you change R2 to be 100K instead of 10K, you'll notice that the amplifier's low-frequency gain increases by a factor of 10, but its bandwidth (the frequency range before this gain starts to fall off) drops by a factor of 10</p>
+<H2>TUTORIAL LINK</H2>
+<a href="https://youtu.be/CbmKI9ncpJ8">click here</a></section>
+<section id="3" style="display: none;">
+	<h1 align="center">EXPERIMENT -1 : INVERTING AMPLIFIER</h1>
+	<H2>AIM:-</H2><p>Design and realize Inverting and Non-inverting amplifier using 741 Op-amp. Apparatus Required: Bread Board, 741 IC, ±12V supply, Resistors and connecting leads.</p>
+</section>
+<p id="4" style="display: none;">third4 area</p>
+<p id="5" style="display: none;">third5 area</p>
+<p id="6" style="display: none;">6 area</p>
+<p id="7" style="display: none;">7 area</p>
+
+<script>
+$(document).ready(function(){
+  $("#area1").click(function(){
+    $("#1").show();
+    $("#2").hide();
+     $("#3").hide();
+      $("#4").hide();
+       $("#5").hide();
+        $("#6").hide();
+         $("#7").hide();
+
+  });
+  $("#area2").click(function(){
+    $("#1").hide();
+    $("#2").show();
+     $("#3").hide();
+      $("#4").hide();
+       $("#5").hide();
+        $("#6").hide();
+         $("#7").hide();
+
+  });
+  $("#area3").click(function(){
+    $("#1").hide();
+    $("#2").hide();
+     $("#3").show();
+      $("#4").hide();
+       $("#5").hide();
+        $("#6").hide();
+         $("#7").hide();
+
+  });
+  $("#area4").click(function(){
+    $("#1").hide();
+    $("#2").hide();
+     $("#3").hide();
+      $("#4").show();
+       $("#5").hide();
+        $("#6").hide();
+         $("#7").hide();
+
+  });
+  $("#area5").click(function(){
+    $("#1").hide();
+    $("#2").hide();
+     $("#3").hide();
+      $("#4").hide();
+       $("#5").show();
+        $("#6").hide();
+         $("#7").hide();
+
+  });
+  $("#area6").click(function(){
+    $("#1").hide();
+    $("#2").hide();
+     $("#3").hide();
+      $("#4").hide();
+       $("#5").hide();
+        $("#6").show();
+         $("#7").hide();
+
+  });
+  $("#area7").click(function(){
+    $("#1").hide();
+    $("#2").hide();
+     $("#3").hide();
+      $("#4").hide();
+       $("#5").hide();
+        $("#6").hide();
+         $("#7").show();
+
+  });
+});
+</script>
+</body>
+</html>
